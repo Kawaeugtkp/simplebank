@@ -25,6 +25,8 @@ func NewServer(store db.Store) *Server {
 
 	// POSTの定義を見に行くと"POST(relativePath string, handlers ...HandlerFunc)"となっていて、
 	// HandlerFuncはtype HandlerFunc func(*Context)だから、createAccount(ctx *gin.Context)のような定義をしたものが引数として必要
+	router.POST("/users", server.createUser) 
+
 	router.POST("/accounts", server.createAccount) 
 	router.GET("/accounts/:id", server.getAccount) 
 	router.GET("/accounts", server.listAccount) 
