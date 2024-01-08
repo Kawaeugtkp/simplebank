@@ -8,6 +8,7 @@ import (
 
 // Store provides all functions to execute db queries and transactions
 // TransferTxは(q *Queries)が書かれた処理を中でやっているからここに追加しないといけないらしい
+// Transactionを気にしないといけない処理はここに自分で追加するってことで良さそう
 type Store interface {
 	Querier
 	TransferTx(ctx context.Context, arg TransferTxParams) (TransferTxResult, error)
